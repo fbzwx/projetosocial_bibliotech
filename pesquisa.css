@@ -1,0 +1,232 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: white;
+  padding: 50px 200px;
+}
+section {
+  margin-top: 75px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+header {
+  background-color: transparent;
+  margin: auto;
+}
+
+.inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inicio h2 {
+  color: #38b26f;
+}
+
+.naveg,
+ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.naveg ul li a {
+  text-decoration: none;
+  color: #38b26f;
+  transition: 0.7s;
+}
+
+.naveg ul li a:hover {
+  color: #134228;
+  text-decoration: underline;
+}
+
+.livroz img {
+  width: 100px;
+  height: 150px;
+}
+.livroz {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  width: 200px;
+  background-color: rgb(224, 224, 224);
+  border-radius: 12px;
+  transition: 0.5s;
+}
+.livroz:hover {
+  transform: scale(1.1);
+}
+.textoz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.sing {
+  background-color: white;
+  border: 1px solid #38b26f;
+  border-radius: 9px;
+  width: 90px;
+  height: 40px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.sing:hover {
+  background-color: #38b26f;
+  color: white;
+  border: 1px solid #38b26f;
+}
+.lere {
+  background-color: #38b26f;
+  border: none;
+  border-radius: 9px;
+  width: 90px;
+  height: 40px;
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+.lere:hover {
+  background-color: #ffffff;
+  border: 1px solid #38b26f;
+  color: #000000;
+}
+.logres {
+  display: none;
+}
+
+input {
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(235, 232, 232);
+  padding: 13px;
+}
+i {
+  color: grey;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  background-color: rgb(235, 232, 232);
+  padding: 13px;
+  transition: 0, 5s;
+}
+.login {
+  background-color: #38b26f;
+  border: none;
+  border-radius: 9px;
+  width: 90px;
+  height: 40px;
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+}
+.login:hover {
+  background-color: #ffffff;
+  border: 1px solid #38b26f;
+  color: #000000;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal.ativo {
+  display: flex;
+}
+
+.modal-conteudo {
+  background: white;
+  width: 750px;
+  padding: 30px;
+  border-radius: 20px;
+
+  display: flex;
+  gap: 40px;
+}
+
+.modal-info {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-info img {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+.modal-info h2 {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.modal-info h4 {
+  font-size: 14px;
+  color: #555;
+}
+
+.modal-desc {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-desc p {
+  line-height: 1.6;
+}
+
+.modal-botoes {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+.fechar {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+.fechar button {
+  border: none;
+  background-color: transparent;
+  transition: 1s;
+}
+.fechar button:hover i {
+  transform: scale(1.1);
+}
