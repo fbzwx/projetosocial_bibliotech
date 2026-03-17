@@ -8,15 +8,17 @@
 }
 
 body {
-  background-color: white;
+  background-color: #F6F6F6;
   padding: 50px 200px;
 }
+
 section {
   margin-top: 75px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
+
 header {
   background-color: transparent;
   margin: auto;
@@ -55,6 +57,7 @@ ul {
   width: 100px;
   height: 150px;
 }
+
 .livroz {
   display: flex;
   flex-direction: column;
@@ -65,20 +68,24 @@ ul {
   border-radius: 12px;
   transition: 0.5s;
 }
+
 .livroz:hover {
   transform: scale(1.1);
 }
+
 .textoz {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
+
 .botoes {
   display: flex;
   gap: 10px;
   margin-top: 20px;
 }
+
 .sing {
   background-color: white;
   border: 1px solid #38b26f;
@@ -94,6 +101,7 @@ ul {
   color: white;
   border: 1px solid #38b26f;
 }
+
 .lere {
   background-color: #38b26f;
   border: none;
@@ -104,13 +112,28 @@ ul {
   color: white;
   cursor: pointer;
 }
+
 .lere:hover {
   background-color: #ffffff;
   border: 1px solid #38b26f;
   color: #000000;
 }
+
 .logres {
   display: none;
+  background-color: white;
+  border: 1px solid #38b26f;
+  border-radius: 9px;
+  width: 90px;
+  height: 40px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.logres:hover {
+  background-color: #ffffff;
+  border: 1px solid #38b26f;
+  color: #000000;
 }
 
 input {
@@ -119,6 +142,7 @@ input {
   background-color: rgb(235, 232, 232);
   padding: 13px;
 }
+
 i {
   color: grey;
 }
@@ -131,6 +155,7 @@ input:focus {
   padding: 13px;
   transition: 0, 5s;
 }
+
 .login {
   background-color: #38b26f;
   border: none;
@@ -141,11 +166,13 @@ input:focus {
   color: white;
   cursor: pointer;
 }
+
 .login:hover {
   background-color: #ffffff;
   border: 1px solid #38b26f;
   color: #000000;
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -217,30 +244,85 @@ input:focus {
   display: flex;
   gap: 15px;
 }
+
 .fechar {
   float: right;
   cursor: pointer;
   font-size: 20px;
 }
+
 .fechar button {
   border: none;
   background-color: transparent;
   transition: 1s;
 }
+
 .fechar button:hover i {
   transform: scale(1.1);
 }
 
-select{
+select {
   margin: 20px;
-  border-radius:12px;
-border: none;
-background-color:#38b26f;
-padding: 12px;
-color: white;
+  border-radius: 12px;
+  border: none;
+  background-color: #38b26f;
+  padding: 12px;
+  color: white;
 }
-select:focus{
-outline:none;
-border: none;
-border-radius:12px 12px 0px 0px;
+
+select:focus {
+  outline: none;
+  border: none;
+  border-radius: 12px 12px 0px 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .inicio {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .respons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 160px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -110px;
+
+  }
+
+  .logres {
+    display: block;
+    background-color: #38b26f;
+    border: none;
+    border-radius: 9px;
+    width: 90px;
+    height: 40px;
+    transition: 0.5s;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .logres:hover {
+    background-color: #ffffff;
+    border: 1px solid #38b26f;
+    color: #000000;
+  }
+
+  .log {
+    display: none;
+
+  }
+  .select{
+display: flex;
+justify-content: flex-start;
+  }
 }

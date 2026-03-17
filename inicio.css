@@ -68,6 +68,7 @@ ul {
   color: white;
   cursor: pointer;
 }
+
 .sing {
   background-color: white;
   border: 1px solid #38b26f;
@@ -100,6 +101,7 @@ ul {
   color: white;
   cursor: pointer;
 }
+
 .lere:hover {
   background-color: #ffffff;
   border: 1px solid #38b26f;
@@ -119,32 +121,37 @@ section {
   line-height: 1.6;
   font-size: larger;
   max-width: 500px;
-   animation: direita 1.5s ease forwards;
+  animation: direita 1.5s ease forwards;
 }
-@keyframes direita{
-  from{
+
+@keyframes direita {
+  from {
     transform: translateY(100px);
     opacity: 0;
   }
-  to{
+
+  to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-.imag{
- animation: esquerda 1.5s ease forwards;
+.imag {
+  animation: esquerda 1.5s ease forwards;
 }
-@keyframes esquerda{
-  from{
+
+@keyframes esquerda {
+  from {
     transform: translateX(-200px);
     opacity: 0;
   }
-  to{
+
+  to {
     transform: translateX(0);
     opacity: 1;
   }
 }
+
 img {
   width: 350px;
   height: 500px;
@@ -164,6 +171,7 @@ input {
   background-color: rgb(235, 232, 232);
   padding: 13px;
 }
+
 i {
   color: grey;
 }
@@ -189,6 +197,10 @@ input:focus {
     flex-direction: column;
   }
 
+  .imag {
+    display: none;
+  }
+
   .textos {
     text-align: left;
     line-height: 1, 5px;
@@ -199,6 +211,7 @@ input:focus {
   .leitura {
     padding: 20px;
   }
+
   .login {
     display: none;
   }
@@ -215,11 +228,13 @@ input:focus {
     cursor: pointer;
     text-decoration: none;
   }
+
   .logres:hover {
     background-color: #ffffff;
     border: 1px solid #38b26f;
     color: #000000;
   }
+
   .respons {
     display: flex;
     align-items: center;
