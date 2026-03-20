@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   padding: 50px 200px;
 }
 
@@ -188,6 +188,18 @@ input:focus {
   align-items: center;
 
   z-index: 1000;
+  animation: direita 1.5s ease forwards;
+}
+@keyframes direita {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .modal.ativo {
@@ -295,7 +307,6 @@ select:focus {
     flex-direction: column;
     justify-content: center;
     margin-left: -110px;
-
   }
 
   .logres {
@@ -319,10 +330,9 @@ select:focus {
 
   .log {
     display: none;
-
   }
-  .select{
-display: flex;
-justify-content: flex-start;
+  .select {
+    display: flex;
+    justify-content: flex-start;
   }
 }
