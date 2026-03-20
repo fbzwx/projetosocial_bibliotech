@@ -1,3 +1,8 @@
+
+import { db } from "../firebase/firebase.js";
+
+console.log("Firebase funcionando");
+
 const nome = localStorage.getItem("nome");
 
 if(nome){
