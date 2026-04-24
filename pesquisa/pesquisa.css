@@ -124,24 +124,24 @@ header {
 .sidebar:hover .estantes {
   opacity: 1;
 }
+.segrg {
+  display: flex;
+  gap: 12px;
+}
 
 .livroz img {
   width: 100px;
   height: 150px;
+  box-shadow: 2px 2px 5px black;
 }
 
 .livroz {
   display: flex;
   padding: 20px;
   align-items: center;
-
   background-color: rgb(224, 224, 224);
   border-radius: 12px;
-  transition: 0.5s;
-}
-
-.livroz:hover {
-  transform: scale(1.1);
+  justify-content: space-between;
 }
 
 .textoz {
