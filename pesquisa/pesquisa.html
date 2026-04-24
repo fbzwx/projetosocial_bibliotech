@@ -16,24 +16,60 @@
 
 <body>
   <header>
-    <div class="inicio">
-      <div class="respons">
-        <h2>Bibliotech</h2>
-        <a href="../login/loghi.html"><button class="logres">login</button></a>
-      </div>
-      <nav class="naveg">
-        <ul>
-          <li><a href="inicio/index.html">inicio</a></li>
-        </ul>
-        <input type="text" placeholder="Pesquisar" id="pesquisa" /><a href="html.html">
-          <i class="fa-solid fa-magnifying-glass"></i></a>
-      </nav>
+      <div class="conteiner">
+        <nav class="sidebar">
+          <h1 class="titulo">bibliotech</h1>
+          <ul>
+            <li>
+              <a href="../telainicio/telainicio.html">
+                <i class="fa-solid fa-house"></i>
+                <span class="text">Início</span>
+              </a>
+            </li>
 
-      <div class="log">
-        <a href="../login/loghi.html"><button class="login">login</button></a>
+            <li class="selecionado">
+    
+                <a href="#">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span class="text">Pesquisa</span>
+  
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <a href="#">
+                  <i
+                    class="fa-regular fa-compass"
+                    style="color: rgb(255, 255, 255)"
+                  ></i>
+                  <span class="text">Explore</span>
+                </a>
+              </a>
+            </li>
+            <p class="estantes">Minhas Estantes</p>
+            <li>
+              <a href="#">
+                <a href="#">
+                  <i class="fa-solid fa-book"></i>
+                  <span class="text">Meus livros</span>
+                </a>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <a href="#">
+                  <i class="fa-solid fa-star"></i>
+                  <span class="text">Favoritos</span>
+                </a>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
   </header>
+  <div class="pesquisa"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Pesquise..."></div>
+<div class="ar">
   <div class="select"><select name="" id="filtroLivros">
 
         <option value="todos">Todas categorias</option>
@@ -121,7 +157,7 @@
         <button class="sing">Empréstimo</button>
       </div>
     </div>
-    </div>
+  
  
     <div class="livroz" data-categoria="romance"
       onclick="abrirlivro('Diva','José de Alencar','../capa_livros/71m+rJT1e1L.jpg','Diva, de José de Alencar, é um romance que narra a história de uma jovem chamada Diva, que é conhecida por sua beleza e charme. A narrativa acompanha as aventuras e desventuras de Diva, explorando temas como o amor, a vaidade e as relações sociais da época.')">
@@ -135,7 +171,7 @@
         <button class="sing">Empréstimo</button>
       </div>
     </div>
-    </div>
+  
 
     <div class="livroz" data-categoria="realismo"
       onclick="abrirlivro('Memorias Póstimas de Brás Cubas','Machado de Assis','../capa_livros/51ceUACdbnL._SY445_SX342_ML2_.jpg','Memórias Póstumas de Brás Cubas, de Machado de Assis, é um romance que narra a história de Brás Cubas, um homem que, após sua morte, decide contar sua vida e suas memórias. A narrativa é marcada por uma perspectiva irônica e crítica, explorando temas como a vaidade, a hipocrisia e a futilidade da existência humana.')">
@@ -149,7 +185,7 @@
         <button class="sing">Empréstimo</button>
       </div>
     </div>
-
+</div>
   </section>
   <div id="modal" class="modal">
 
@@ -179,7 +215,6 @@
       </div>
     </div>
   </div>
-
   <script src="pesquisa.js">
   </script>
 </body>

@@ -9,16 +9,15 @@
 
 body {
   background-color: #f6f6f6;
-  padding: 50px 200px;
 }
 
 section {
-  margin-top: 75px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
 }
-
+.ar {
+  padding: 50px 200px;
+}
 header {
   background-color: transparent;
   margin: auto;
@@ -34,31 +33,96 @@ header {
   color: #38b26f;
 }
 
-.naveg,
-ul {
+.sidebar {
+  color: white;
   position: fixed;
-  left: 0;
   top: 0;
-  width: 65px;
+  left: 0;
+  width: 60px; /* largura fechada */
   height: 100vh;
-  background-color: #2fa36b; /* verde principal */
+  background: #38b26f;
+  transition: 0.3s;
   overflow: hidden;
-  transition: width 0.3s ease;
-  box-shadow: 2px;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar i {
+  color: white;
+}
+/* Quando passa o mouse */
+.sidebar:hover {
+  width: 200px; /* largura aberta */
 }
 
-.naveg:hover {
-  width: 210px;
+/* Lista */
+.sidebar ul {
+  list-style: none;
+  padding: 10px;
 }
-.naveg ul li a {
+
+/* Itens */
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+/* Links */
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  color: #38b26f;
-  transition: 0.7s;
 }
 
-.naveg ul li a:hover {
-  color: #134228;
-  text-decoration: underline;
+/* Ícones */
+.sidebar i {
+  font-size: 20px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Texto escondido */
+.sidebar .text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+/* Mostrar texto no hover */
+.sidebar:hover .text {
+  opacity: 1;
+}
+/* escondido por padrão */
+.titulo {
+  padding: 12px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* aparece quando passa o mouse na sidebar */
+.sidebar:hover .titulo {
+  opacity: 1;
+}
+
+.selecionado {
+  color: black;
+  background-color: #82f3b5;
+  height: 27px;
+  border-radius: 12px;
+}
+.selecionado li i {
+  margin-top: 20px;
+}
+
+.estantes {
+  padding: 12px;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+/* aparece no hover da sidebar */
+.sidebar:hover .estantes {
+  opacity: 1;
 }
 
 .livroz img {
@@ -68,10 +132,9 @@ ul {
 
 .livroz {
   display: flex;
-  flex-direction: column;
   padding: 20px;
   align-items: center;
-  width: 200px;
+
   background-color: rgb(224, 224, 224);
   border-radius: 12px;
   transition: 0.5s;
@@ -90,6 +153,7 @@ ul {
 
 .botoes {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   margin-top: 20px;
 }
@@ -146,9 +210,10 @@ ul {
 
 input {
   border: none;
-  border-radius: 50px;
+  border-radius: 0px 50px 50px 0px;
   background-color: rgb(235, 232, 232);
   padding: 13px;
+  width: 500px;
 }
 
 i {
@@ -158,7 +223,7 @@ i {
 input:focus {
   outline: none;
   border: none;
-  border-radius: 50px;
+  border-radius: 50 0 0 50;
   background-color: rgb(235, 232, 232);
   padding: 13px;
   transition: 0, 5s;
@@ -343,4 +408,21 @@ select:focus {
     display: flex;
     justify-content: flex-start;
   }
+}
+
+.pesquisa {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #38b26f;
+  padding: 100px;
+}
+.pesquisa i {
+  border: none;
+  border-radius: 50px 0px 0px 50px;
+  background-color: rgb(235, 232, 232);
+  padding: 13px;
+}
+ar {
+  padding: 50px 200px;
 }
