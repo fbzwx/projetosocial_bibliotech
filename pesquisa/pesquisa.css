@@ -36,7 +36,7 @@ header {
 
 .naveg,
 ul {
- position: fixed;
+  position: fixed;
   left: 0;
   top: 0;
   width: 65px;
@@ -44,14 +44,12 @@ ul {
   background-color: #2fa36b; /* verde principal */
   overflow: hidden;
   transition: width 0.3s ease;
-  box-shadow: 2px ;
+  box-shadow: 2px;
 }
 
 .naveg:hover {
   width: 210px;
 }
-
-
 .naveg ul li a {
   text-decoration: none;
   color: #38b26f;
