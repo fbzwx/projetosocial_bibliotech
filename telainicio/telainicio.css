@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Sidebar */
+.sidebar {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px; /* largura fechada */
+  height: 170vh;
+  background: #38b26f;
+  transition: 0.3s;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+i {
+  color: white;
+}
+/* Quando passa o mouse */
+.sidebar:hover {
+  width: 200px; /* largura aberta */
+}
+
+/* Lista */
+.sidebar ul {
+  list-style: none;
+  padding: 10px;
+}
+
+/* Itens */
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+/* Links */
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+/* Ícones */
+.sidebar i {
+  font-size: 20px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Texto escondido */
+.sidebar .text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+/* Mostrar texto no hover */
+.sidebar:hover .text {
+  opacity: 1;
+}
+/* escondido por padrão */
+.titulo {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* aparece quando passa o mouse na sidebar */
+.sidebar:hover .titulo {
+  opacity: 1;
+}
+
+.selecionado {
+  color: black;
+  background-color: #82f3b5;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+.selecionado li i {
+  margin-top: 20px;
+}
+
+.estantes {
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+/* aparece no hover da sidebar */
+.sidebar:hover .estantes {
+  opacity: 1;
+}
