@@ -7,6 +7,12 @@
 
     <link rel="stylesheet" href="login.css" />
 
+<<<<<<< HEAD
+=======
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+>>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,6 +33,7 @@
       <div class="card">
         <h3>Login</h3>
 
+<<<<<<< HEAD
         <form onsubmit="entrar(event)">
           <label>Nome</label>
           <input type="text" id="nome" placeholder="Digite seu nome" required />
@@ -48,22 +55,59 @@
           />
           <p id="loginError" style="color:red; font-size:14px; margin-top:5px;"></p>
           
+=======
+        <form action="inicio.html">
+          <label>Nome</label>
+          <input type="text" placeholder="Digite seu nome" required />
+
+          <label>Email</label>
+          <input type="email" placeholder="Digite seu email" required />
+
+          <label>Senha</label>
+          <input type="password" placeholder="Digite sua senha" required />
+>>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
           <button type="submit">Entrar</button>
         </form>
 
         <div class="divider">ou</div>
 
+<<<<<<< HEAD
         <button type="button" onclick="googleLogin()">Entrar com Google</button>
+=======
+        <div
+          id="g_id_onload"
+          data-client_id="524209666837-pb5ka28lajcka858trlc3gltggj0suot.apps.googleusercontent.com"
+          data-callback="handleCredentialResponse"
+        ></div>
+
+        <div
+          class="g_id_signin"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="signin_with"
+          data-shape="rectangular"
+          data-logo_alignment="left"
+        ></div>
+>>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
 
         <div id="user-info"></div>
 
         <div class="cada">
           <p>não tem uma conta?</p>
+<<<<<<< HEAD
           <a href="../inicio/index.html"> Clique aqui</a>
+=======
+          <a href="cadastro.html"> Clique aqui</a>
+>>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
         </div>
       </div>
     </div>
 
+<<<<<<< HEAD
     <script type="module" src="login.js"></script>
+=======
+    <script src="login.js"></script>
+>>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
   </body>
 </html>
