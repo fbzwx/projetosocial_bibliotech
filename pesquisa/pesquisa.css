@@ -14,6 +14,35 @@ body {
 section {
   display: flex;
   flex-direction: column;
+}.usuario {
+  position: absolute;
+  bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+}
+.usuario h2{
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.sidebar:hover .usuario h2{
+  opacity: 1;
+}
+
+.usuario img{
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  flex-shrink: 0;
 }
 .ar {
   padding: 50px 200px;
@@ -38,13 +67,17 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 60px; /* largura fechada */
+
+  width: 60px;
   height: 100vh;
+
   background: #38b26f;
+
   transition: 0.3s;
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
 }
 .sidebar i {
   color: white;
@@ -106,8 +139,10 @@ header {
 .selecionado {
   color: black;
   background-color: #82f3b5;
-  height: 27px;
+  height: 40px;
   border-radius: 12px;
+  display: flex;
+  align-items: center;
 }
 .selecionado li i {
   margin-top: 20px;
@@ -124,31 +159,26 @@ header {
 .sidebar:hover .estantes {
   opacity: 1;
 }
-.segrg {
-  display: flex;
-  gap: 12px;
-}
 
 .livroz img {
   width: 100px;
   height: 150px;
-  box-shadow: 2px 2px 5px black;
 }
 
 .livroz {
   display: flex;
   padding: 20px;
   align-items: center;
-  background-color: rgb(224, 224, 224);
-  border-radius: 12px;
   justify-content: space-between;
+  border-radius: 12px;
+  transition: 0.5s;
 }
 
 .textoz {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: first baseline;
+  gap: 5px;
 }
 
 .botoes {
@@ -161,8 +191,8 @@ header {
 .sing {
   background-color: white;
   border: 1px solid #38b26f;
-  border-radius: 9px;
-  width: 90px;
+  border-radius: 50px;
+  width: 200px;
   height: 40px;
   transition: 0.5s;
   cursor: pointer;
@@ -177,8 +207,8 @@ header {
 .lere {
   background-color: #38b26f;
   border: none;
-  border-radius: 9px;
-  width: 90px;
+  border-radius: 50px;
+  width: 200px;
   height: 40px;
   transition: 0.5s;
   color: white;
@@ -423,6 +453,46 @@ select:focus {
   background-color: rgb(235, 232, 232);
   padding: 13px;
 }
-ar {
-  padding: 50px 200px;
+.sep {
+  display: flex;
+  gap: 20px;
+}
+.favo {
+  position: relative;
+}
+.favori i {
+  font-size: 18px;
+  color: white;
+}
+
+.favori.ativo i {
+  color: gold;
+  border: none;
+}
+
+.favori {
+  position: absolute;
+  right: 2px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+.mais {
+  background-color: #38b26f;
+  border: none;
+  border-radius: 12px;
+  width: 100px;
+  height: 40px;
+  transition: 0.5s;
+  color: white;
+  cursor: pointer;
+  margin-top: 35px;
+}
+
+.mais:hover {
+  background-color: #ffffff;
+  border: 1px solid #38b26f;
+  color: #000000;
 }

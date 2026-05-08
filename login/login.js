@@ -1,19 +1,53 @@
- function handleCredentialResponse(response) {
-      const data = parseJwt(response.credential);
+import { auth } from "./firebase.js";
 
-      document.getElementById("user-info").innerHTML = `
-        <h4>Bem-vindo, ${data.name}</h4>
-        <p>${data.email}</p>
-        <img src="${data.picture}" width="80" style="border-radius:50%">
-      `;
+import {
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+const errorText = document.getElementById("loginError");
+
+// LOGIN EMAIL/SENHA
+window.entrar = async function (event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+
+  try {
+    await signInWithEmailAndPassword(auth, email, senha);
+
+    errorText.textContent = "";
+    window.location.href = "../pesquisa/pesquisa.html";
+
+  } catch (error) {
+
+    if (error.code === "auth/user-not-found") {
+      alert("Usuário não encontrado");
+
+    } else if (
+      error.code === "auth/wrong-password" ||
+      error.code === "auth/invalid-credential"
+    ) {
+      errorText.textContent = "Senha ou email incorretos";
+
+    } else {
+      errorText.textContent = "Erro ao fazer login";
     }
+  }
+};
 
-    function parseJwt(token) {
-      const base64Url = token.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
+// LOGIN GOOGLE
+window.googleLogin = async function () {
+  const provider = new GoogleAuthProvider();
 
-      return JSON.parse(jsonPayload);
-    }
+  try {
+    await signInWithPopup(auth, provider);
+
+    window.location.href = "../pesquisa/pesquisa.html";
+
+  } catch (error) {
+    errorText.textContent = "Erro ao entrar com Google";
+  }
+};

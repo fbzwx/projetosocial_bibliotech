@@ -7,9 +7,6 @@
 
     <link rel="stylesheet" href="login.css" />
 
-    <!-- Google Identity Services -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,45 +27,43 @@
       <div class="card">
         <h3>Login</h3>
 
-        <form action="inicio.html">
+        <form onsubmit="entrar(event)">
           <label>Nome</label>
-          <input type="text" placeholder="Digite seu nome" required />
+          <input type="text" id="nome" placeholder="Digite seu nome" required />
 
           <label>Email</label>
-          <input type="email" placeholder="Digite seu email" required />
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite seu email"
+            required
+          />
 
           <label>Senha</label>
-          <input type="password" placeholder="Digite sua senha" required />
+          <input
+            type="password"
+            id="senha"
+            placeholder="Digite sua senha"
+            required
+          />
+          <p id="loginError" style="color:red; font-size:14px; margin-top:5px;"></p>
+          
           <button type="submit">Entrar</button>
         </form>
 
         <div class="divider">ou</div>
 
-        <div
-          id="g_id_onload"
-          data-client_id="524209666837-pb5ka28lajcka858trlc3gltggj0suot.apps.googleusercontent.com"
-          data-callback="handleCredentialResponse"
-        ></div>
-
-        <div
-          class="g_id_signin"
-          data-type="standard"
-          data-size="large"
-          data-theme="outline"
-          data-text="signin_with"
-          data-shape="rectangular"
-          data-logo_alignment="left"
-        ></div>
+        <button type="button" onclick="googleLogin()">Entrar com Google</button>
 
         <div id="user-info"></div>
 
         <div class="cada">
           <p>não tem uma conta?</p>
-          <a href="cadastro.html"> Clique aqui</a>
+          <a href="../inicio/index.html"> Clique aqui</a>
         </div>
       </div>
     </div>
 
-    <script src="login.js"></script>
+    <script type="module" src="login.js"></script>
   </body>
 </html>

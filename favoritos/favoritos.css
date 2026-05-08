@@ -1,14 +1,26 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
+header {
+  background-color: transparent;
+  margin: auto;
+}
 
-/* Sidebar */
+.inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inicio h2 {
+  color: #38b26f;
+}
+
 .sidebar {
   color: white;
   position: fixed;
@@ -23,7 +35,7 @@
   justify-content: center;
   gap: 5px;
 }
-i {
+.sidebar i {
   color: white;
 }
 /* Quando passa o mouse */
@@ -70,6 +82,7 @@ i {
 }
 /* escondido por padrão */
 .titulo {
+  padding: 12px;
   opacity: 0;
   transition: 0.3s;
 }
@@ -92,6 +105,7 @@ i {
 }
 
 .estantes {
+  padding: 12px;
   opacity: 0;
   transition: 0.3s;
   white-space: nowrap;
@@ -100,4 +114,12 @@ i {
 /* aparece no hover da sidebar */
 .sidebar:hover .estantes {
   opacity: 1;
+}
+
+.livroz img {
+  width: 100px;
+  height: 150px;
+}
+.ar {
+  padding: 50px 200px;
 }
