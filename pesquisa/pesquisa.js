@@ -1,11 +1,19 @@
-import { auth } from "../login/firebase.js";
+import { auth, db } from "../firebase/firebase.js";
 
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+import {
+  doc,
+  setDoc,
+  deleteDoc,
+  getDoc,
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 onAuthStateChanged(auth, (user) => {
+  console.log("Auth state changed:");
   if (user) {
     document.getElementById("nomeUsuario").innerText =
-"Bem-vindo, " + user.displayName;
+      "Bem-vindo, " + user.displayName;
 
     const foto = document.getElementById("fotoUsuario");
 
@@ -14,6 +22,8 @@ onAuthStateChanged(auth, (user) => {
     } else {
       foto.style.display = "none";
     }
+
+    carregarFavoritos();
   } else {
     window.location.href = "../login/login.html";
   }
@@ -29,9 +39,14 @@ function abrirlivro(title, author, imgSrc, description, pdf) {
 
   document.getElementById("modal").style.display = "flex";
 }
+
+window.abrirlivro = abrirlivro;
+
 function fecharLivro() {
   document.getElementById("modal").style.display = "none";
 }
+
+window.fecharLivro = fecharLivro;
 
 const filtro = document.getElementById("filtroLivros");
 const livros = document.querySelectorAll(".livroz");
@@ -49,6 +64,7 @@ filtro.addEventListener("change", function () {
     }
   });
 });
+
 function removerAcentos(texto) {
   return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
@@ -63,6 +79,7 @@ pesquisa.addEventListener("keyup", function () {
     let titulo = removerAcentos(
       livro.querySelector("h3").innerText.toLowerCase(),
     );
+
     let autor = removerAcentos(
       livro.querySelector("h5").innerText.toLowerCase(),
     );
@@ -75,31 +92,49 @@ pesquisa.addEventListener("keyup", function () {
   });
 });
 
-function toggleFavorito(botao, id) {
-  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+async function toggleFavorito(botao, id) {
+  const user = auth.currentUser;
 
-  if (favoritos.includes(id)) {
-    // remover
-    favoritos = favoritos.filter((item) => item !== id);
-    botao.classList.remove("ativo");
-  } else {
-    // adicionar
-    favoritos.push(id);
-    botao.classList.add("ativo");
+  if (!user) {
+    alert("Faça login");
+    return;
   }
 
-  localStorage.setItem("favoritos", JSON.stringify(favoritos));
+  const ref = doc(db, "users", user.uid, "favorites", id);
+
+  const favoritoExiste = await getDoc(ref);
+
+  if (favoritoExiste.exists()) {
+    await deleteDoc(ref);
+
+    botao.classList.remove("ativo");
+  } else {
+    await setDoc(ref, {
+      id: id,
+    });
+
+    botao.classList.add("ativo");
+  }
 }
 
-// quando carregar a página, manter selecionados
-window.onload = function () {
-  let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+window.toggleFavorito = toggleFavorito;
 
-  document.querySelectorAll(".btn-favorito").forEach((botao) => {
-    let id = botao.getAttribute("data-id");
+async function carregarFavoritos() {
+  const user = auth.currentUser;
 
-    if (favoritos.includes(id)) {
+  if (!user) return;
+
+  document.querySelectorAll(".favori").forEach(async (botao) => {
+    const id = botao.getAttribute("data-id");
+
+    const ref = doc(db, "users", user.uid, "favorites", id);
+
+    const favoritoExiste = await getDoc(ref);
+
+    if (favoritoExiste.exists()) {
       botao.classList.add("ativo");
     }
   });
-};
+}
+
+window.toggleFavorito = toggleFavorito;

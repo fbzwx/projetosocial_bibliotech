@@ -1,125 +1,222 @@
+
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
   font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-header {
-  background-color: transparent;
-  margin: auto;
 }
 
-.inicio {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+body {
+  background-color: #f6f6f6;
 }
 
-.inicio h2 {
-  color: #38b26f;
-}
+/* SIDEBAR */
 
 .sidebar {
   color: white;
+
   position: fixed;
   top: 0;
   left: 0;
-  width: 60px; /* largura fechada */
-  height: 170vh;
+
+  width: 60px;
+  height: 100vh;
+
   background: #38b26f;
+
   transition: 0.3s;
   overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.sidebar i {
-  color: white;
-}
-/* Quando passa o mouse */
-.sidebar:hover {
-  width: 200px; /* largura aberta */
+
+  z-index: 1000;
 }
 
-/* Lista */
+.sidebar:hover {
+  width: 200px;
+}
+
 .sidebar ul {
   list-style: none;
   padding: 10px;
 }
 
-/* Itens */
 .sidebar ul li {
   margin: 20px 0;
 }
 
-/* Links */
 .sidebar ul li a {
   display: flex;
   align-items: center;
-  color: rgb(255, 255, 255);
+
+  color: white;
   text-decoration: none;
 }
 
-/* Ícones */
 .sidebar i {
   font-size: 20px;
   min-width: 40px;
   text-align: center;
+
+  color: white;
 }
 
-/* Texto escondido */
 .sidebar .text {
   opacity: 0;
   white-space: nowrap;
+
   transition: 0.3s;
 }
 
-/* Mostrar texto no hover */
 .sidebar:hover .text {
   opacity: 1;
 }
-/* escondido por padrão */
+
 .titulo {
   padding: 12px;
+
   opacity: 0;
   transition: 0.3s;
 }
 
-/* aparece quando passa o mouse na sidebar */
 .sidebar:hover .titulo {
   opacity: 1;
 }
 
-.selecionado {
-  color: black;
-  background-color: #82f3b5;
-  height: 40px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-}
-.selecionado li i {
-  margin-top: 20px;
-}
-
 .estantes {
   padding: 12px;
+
   opacity: 0;
   transition: 0.3s;
+
   white-space: nowrap;
 }
 
-/* aparece no hover da sidebar */
 .sidebar:hover .estantes {
   opacity: 1;
 }
 
-.livroz img {
-  width: 100px;
-  height: 150px;
+.selecionado {
+  background-color: #82f3b5;
+
+  height: 40px;
+
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
 }
-.ar {
-  padding: 50px 200px;
+
+/* CONTEÚDO */
+.usuario,
+.pesqusfav,
+#listaFavoritos {
+  margin-left: 90px;
+}
+
+/* espaço fixo da sidebar */
+
+body {
+  padding-left: 70px;
+}
+.usuario {
+  margin-top: 20px;
+}
+
+#listaFavoritos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* USUÁRIO */
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px;
+}
+
+.usuario img {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* PESQUISA */
+
+.pesqusfav {
+  padding: 20px;
+}
+
+.pesqusfav input {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 50px;
+
+  background-color: #e9e9e9;
+
+  font-size: 15px;
+}
+
+.pesqusfav input:focus {
+  outline: none;
+}
+
+/* FAVORITOS */
+
+#listaFavoritos {
+  padding: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* CARD */
+
+.livro {
+  background: white;
+
+  width: 220px;
+
+  border-radius: 20px;
+
+  padding: 15px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.livro:hover {
+  transform: translateY(-5px);
+}
+
+.livro img {
+  width: 100%;
+  height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+}
+
+.livro h2 {
+  margin-top: 12px;
+
+  font-size: 20px;
+}
+
+.livro p {
+  color: #666;
+
+  margin-top: 5px;
 }

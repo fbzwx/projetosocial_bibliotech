@@ -21,11 +21,7 @@
         <h1 class="titulo">bibliotech</h1>
         <ul>
           <li>
-<<<<<<< HEAD
             <a href="../inicio/index.html">
-=======
-            <a href="../telainicio/telainicio.html">
->>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
               <i class="fa-solid fa-house"></i>
               <span class="text">Início</span>
             </a>
@@ -65,12 +61,8 @@
               </a>
             </a>
           </li>
-<<<<<<< HEAD
         </ul>
         <div class="usuario">
-=======
-        </ul><div class="usuario">
->>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
 
     <img id="fotoUsuario">
 
@@ -98,8 +90,14 @@
         <div class="sep">
           <div class="favo">
             <img src="../capa_livros/relogio.jpg" alt="" />
-            <button class="favori" onclick="toggleFavorito(this, 'O Relogio de Ouro')"><i
-                class="fa-solid fa-star"></i></button>
+            <button 
+  class="favori" 
+  onclick="toggleFavorito(this, 'O Relogio de Ouro')" 
+  data-id="O Relogio de Ouro">
+
+  <i class="fa-solid fa-star"></i>
+
+</button>
           </div>
           <div class="textoz">
             <h3>Relogio de Ouro</h3>
@@ -120,7 +118,7 @@
         <div class="sep">
           <div class="favo">
             <img src="../capa_livros/senhora.jpg" alt="" />
-            <button class="favori" onclick="toggleFavorito(this, 'Senhora')"><i class="fa-solid fa-star"></i></button>
+            <button class="favori" onclick="toggleFavorito(this, 'Senhora')" data-id="Senhora"><i class="fa-solid fa-star"></i></button>
           </div>
           <div class="textoz">
             <h3>Senhora</h3>
@@ -140,7 +138,7 @@
         <div class="sep">
           <div class="favo">
             <img src="../capa_livros/lagrima.jpg" alt="" />
-            <button class="favori" onclick="toggleFavorito(this, 'Uma lagrima de Mulhar')"><i
+            <button class="favori" onclick="toggleFavorito(this, 'Uma lagrima de Mulhar')" data-id="Uma lagrima de Mulhar"><i
                 class="fa-solid fa-star"></i></button>
           </div>
           <div class="textoz">
@@ -161,7 +159,7 @@
         <div class="sep">
           <div class="favo">
             <img src="../capa_livros/615v3GGogkL._AC_UF1000,1000_QL80_.jpg" alt="" />
-            <button class="favori" onclick="toggleFavorito(this, 'A Viuvinha')"><i
+            <button class="favori" onclick="toggleFavorito(this, 'A Viuvinha')" data-id="A Viuvinha"><i
                 class="fa-solid fa-star"></i></button>
           </div>
           <div class="textoz">
@@ -183,7 +181,7 @@
           <div class="favo">
             <img src="../capa_livros/91rLDohQN7L._UF1000,1000_QL80_.jpg" alt="" />
 
-            <button class="favori" onclick="toggleFavorito(this, 'O Garatuja')"><i
+            <button class="favori" onclick="toggleFavorito(this, 'O Garatuja')" data-id="O Garatuja"><i
                 class="fa-solid fa-star"></i></button>
           </div>
           <div class="textoz">
@@ -202,7 +200,10 @@
 
       <div class="livroz" data-categoria="regionalismo">
         <div class="sep">
-          <img src="../capa_livros/81altRKu2VL._AC_UF1000,1000_QL80_.jpg" alt="" />
+          <div class="favo">
+            <img src="../capa_livros/81altRKu2VL._AC_UF1000,1000_QL80_.jpg" alt="" />
+            <button class="favori" onclick="toggleFavorito(this, 'O Quinze')" data-id="O Quinze"><i class="fa-solid fa-star"></i></button>
+          </div>
           <div class="textoz">
             <h3>O Quinze</h3>
             <h5>Rachel de Queiroz</h5>
@@ -220,7 +221,10 @@
 
       <div class="livroz" data-categoria="romance">
         <div class="sep">
-          <img src="../capa_livros/71m+rJT1e1L.jpg" alt="" />
+          <div class="favo">
+            <img src="../capa_livros/71m+rJT1e1L.jpg" alt="" />
+            <button class="favori" onclick="toggleFavorito(this, 'Diva')" data-id="Diva"><i class="fa-solid fa-star"></i></button>
+          </div>
           <div class="textoz">
             <h3>Diva</h3>
             <h5>José de Alencar</h5>
@@ -238,7 +242,10 @@
 
       <div class="livroz" data-categoria="realismo">
         <div class="sep">
-          <img src="../capa_livros/51ceUACdbnL._SY445_SX342_ML2_.jpg" alt="" />
+          <div class="favo">
+            <img src="../capa_livros/51ceUACdbnL._SY445_SX342_ML2_.jpg" alt="" />
+            <button class="favori" onclick="toggleFavorito(this, 'Memorias Póstimas de Brás Cubas')" data-id="Memorias Póstimas de Brás Cubas"><i class="fa-solid fa-star"></i></button>
+          </div>
           <div class="textoz">
             <h3>Memorias Póstimas <br>de Brás Cubas</h3>
             <h5>Machado de Assis</h5>
@@ -282,13 +289,8 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
   <script type="module" src="pesquisa.js"></script>
   
-=======
-  <script src="pesquisa.js">
-  </script>
->>>>>>> e00cb629fac5c3c35bf3312797958240dfcc8dc6
 </body>
 
 </html>
