@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bibliotech | Favoritos</title>
@@ -8,66 +8,78 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="conteiner">
-            <nav class="sidebar">
-                <h1 class="titulo">bibliotech</h1>
-                <ul>
-                    <li>
-                        <a href="../telainicio/telainicio.html">
-                            <i class="fa-solid fa-house"></i>
-                            <span class="text">Início</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../pesquisa/pesquisa.html">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span class="text">Pesquisa</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-regular fa-compass"></i>
-                            <span class="text">Explore</span>
-                        </a>
-                    </li>
-                    
-                    <p class="estantes">Minhas Estantes</p>
-                    
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-book"></i>
-                            <span class="text">Meus livros</span>
-                        </a>
-                    </li>
-                    <li class="selecionado">
-                        <a href="#">
-                            <i class="fa-solid fa-star"></i>
-                            <span class="text">Favoritos</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+      <div class="conteiner">
+        <nav class="sidebar">
+          <h1 class="titulo">bibliotech</h1>
+          <ul>
+            <li>
+              <a href="../index.html">
+                <i class="fa-solid fa-house"></i>
+                <span class="text">Início</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pesquisa/pesquisa.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="text">Pesquisa</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-regular fa-compass"></i>
+                <span class="text">Explore</span>
+              </a>
+            </li>
+
+            <p class="estantes">Minhas Estantes</p>
+
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-book"></i>
+                <span class="text">Meus livros</span>
+              </a>
+            </li>
+            <li class="selecionado">
+              <a href="#">
+                <i class="fa-solid fa-star"></i>
+                <span class="text">Favoritos</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <div class="usuario">
-            <img id="fotoUsuario" alt="Foto do Usuário" src="https://via.placeholder.com/60" />
-            <h1 id="nomeUsuario">Carregando...</h1>
-        </div>
+      <div class="usuario">
+        <img
+          id="fotoUsuario"
+          alt="Foto do Usuário"
+          src="https://via.placeholder.com/60"
+        />
+        <h1>Bem-vindo(a),</h1>
+        <h1 id="nomeUsuario">Carregando...</h1>
+        <button class="logout" id="logout">Sair</button>
+      </div>
 
-        <div class="pesqusfav">
-            <input type="text" placeholder="Pesquise em seus favoritos..." />
-        </div>
+      <div class="pesqusfav">
+        <input type="text" placeholder="Pesquise em seus favoritos..." />
+      </div>
 
-        <div id="listaFavoritos"></div>
+      <div id="listaFavoritos"></div>
     </main>
 
     <script type="module" src="favoritos.js"></script>
-</body>
+  </body>
 </html>
