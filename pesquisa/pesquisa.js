@@ -10,7 +10,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 onAuthStateChanged(auth, (user) => {
-  console.log("Auth state changed:");
   if (user) {
     document.getElementById("nomeUsuario").innerText =
       "Bem-vindo, " + user.displayName;
@@ -34,9 +33,7 @@ function abrirlivro(title, author, imgSrc, description, pdf) {
   document.getElementById("modalAuthor").innerText = author;
   document.getElementById("modalImg").src = imgSrc;
   document.getElementById("modalDesc").innerText = description;
-
   document.getElementById("modalPdf").href = pdf;
-
   document.getElementById("modal").style.display = "flex";
 }
 
@@ -55,9 +52,7 @@ filtro.addEventListener("change", function () {
   const categoria = this.value;
 
   livros.forEach(function (livro) {
-    if (categoria === "todos") {
-      livro.style.display = "flex";
-    } else if (livro.dataset.categoria === categoria) {
+    if (categoria === "todos" || livro.dataset.categoria === categoria) {
       livro.style.display = "flex";
     } else {
       livro.style.display = "none";
@@ -79,7 +74,6 @@ pesquisa.addEventListener("keyup", function () {
     let titulo = removerAcentos(
       livro.querySelector("h3").innerText.toLowerCase(),
     );
-
     let autor = removerAcentos(
       livro.querySelector("h5").innerText.toLowerCase(),
     );
@@ -92,27 +86,28 @@ pesquisa.addEventListener("keyup", function () {
   });
 });
 
-async function toggleFavorito(botao, id) {
+// ✅ Agora recebe titulo, autor e capa para salvar no Firestore
+async function toggleFavorito(botao, id, titulo, autor, capa) {
   const user = auth.currentUser;
 
   if (!user) {
-    alert("Faça login");
+    alert("Faça login para favoritar livros.");
     return;
   }
 
   const ref = doc(db, "users", user.uid, "favorites", id);
-
   const favoritoExiste = await getDoc(ref);
 
   if (favoritoExiste.exists()) {
     await deleteDoc(ref);
-
     botao.classList.remove("ativo");
   } else {
     await setDoc(ref, {
       id: id,
+      titulo: titulo,
+      autor: autor,
+      capa: capa,
     });
-
     botao.classList.add("ativo");
   }
 }
@@ -121,14 +116,11 @@ window.toggleFavorito = toggleFavorito;
 
 async function carregarFavoritos() {
   const user = auth.currentUser;
-
   if (!user) return;
 
   document.querySelectorAll(".favori").forEach(async (botao) => {
     const id = botao.getAttribute("data-id");
-
     const ref = doc(db, "users", user.uid, "favorites", id);
-
     const favoritoExiste = await getDoc(ref);
 
     if (favoritoExiste.exists()) {
@@ -136,5 +128,3 @@ async function carregarFavoritos() {
     }
   });
 }
-
-window.toggleFavorito = toggleFavorito;
